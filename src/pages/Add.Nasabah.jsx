@@ -39,7 +39,7 @@ const AddNasabah = () =>{
             const resultId = await axios.post("http://localhost:8800/admin/nasabah/tambah", sentra, {withCredentials: true})
             console.log("result_id", resultId.data)
             await axios.get("http://localhost:8800/admin/nasabah/update/kodeunik/" + (resultId.data.insertId + "x" + sentra.priode), {withCredentials: true})
-            await axios.post("http://localhost:8800/admin/hadiah/tambah/" + (resultId.data.insertId + "x" + sentra.id_sentra), {withCredentials: true})
+            await axios.get("http://localhost:8800/admin/hadiah/tambah/" + (resultId.data.insertId + "x" + sentra.id_sentra), {withCredentials: true})
             navigate("/admin/nasabah")
         } catch (err) {
             console.log(err)
