@@ -21,10 +21,7 @@ const Admin = () =>{
             <div className="circleDec2"></div>
             <div className="glass">
                 <p className="login_link">
-                    {
-                        logout()
-                    }
-                    <Link to={`/`}>Logout</Link>
+                    <Link onClick={logout} to={`/`}>Logout</Link>
                 </p>
                 <div className="admin">
                     <Link to="/admin/sentra"><button>Sentra</button></Link>
