@@ -19,9 +19,9 @@ const Sentra = () =>{
 
     const handleDelete = async (id) =>{
         try {
-            await axios.delete("http://localhost:8800/admin/sentra/"+id)
-            await axios.delete("http://localhost:8800/admin/nasabah/sentra/"+id)
-            await axios.delete("http://localhost:8800/admin/hadiah/sentra/"+id)
+            await axios.delete("http://localhost:8800/admin/sentra/"+id, {withCredentials: true})
+            await axios.delete("http://localhost:8800/admin/nasabah/sentra/"+id, {withCredentials: true})
+            await axios.delete("http://localhost:8800/admin/hadiah/sentra/"+id, {withCredentials: true})
             window.location.reload()
         } catch (err) {
             console.log(err)

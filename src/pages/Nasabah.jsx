@@ -13,7 +13,7 @@ const Nasabah = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const resPriode = await axios.get("http://localhost:8800/admin/nasabah/priode")
+                const resPriode = await axios.get("http://localhost:8800/admin/nasabah/priode", {withCredentials: true})
                 setPriode(resPriode.data)
                 // const res = await axios.get("http://localhost:8800/admin/nasabah")
                 // setNasabah(res.data);
@@ -26,8 +26,8 @@ const Nasabah = () =>{
 
     const handleDelete = async (id) =>{
         try {
-            await axios.delete("http://localhost:8800/admin/nasabah/"+id)
-            await axios.delete("http://localhost:8800/admin/hadiah/"+id)
+            await axios.delete("http://localhost:8800/admin/nasabah/"+id, {withCredentials: true})
+            await axios.delete("http://localhost:8800/admin/hadiah/"+id, {withCredentials: true})
             window.location.reload()
         } catch (err) {
             console.log(err)
@@ -40,7 +40,7 @@ const Nasabah = () =>{
 
     const handleMove = async (e) =>{
         try{
-            const res = await axios.get("http://localhost:8800/admin/nasabah/" + cosedPriode.priode)
+            const res = await axios.get("http://localhost:8800/admin/nasabah/" + cosedPriode.priode, {withCredentials: true})
             setNasabah(res.data);
         }catch (err) {
             console.log(err)

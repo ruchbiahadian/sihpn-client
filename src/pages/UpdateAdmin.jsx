@@ -17,7 +17,7 @@ const UpdateAdmin = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const res = await axios.get("http://localhost:8800/admin/update")
+                const res = await axios.get("http://localhost:8800/admin/update", {withCredentials: true})
                 setAdmin(res.data[0]);
             } catch (err) {
                 console.log(err)
@@ -39,7 +39,7 @@ const UpdateAdmin = () =>{
             }else if(sentra.oldPassword !== admin.password){
                 alert("password lama salah");
             }else{
-                await axios.put("http://localhost:8800/admin/update", sentra)
+                await axios.put("http://localhost:8800/admin/update", sentra, {withCredentials: true})
                 alert("email dan password baru berhasil diubah");
                 navigate("/admin")
             }

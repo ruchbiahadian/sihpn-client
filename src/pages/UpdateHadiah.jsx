@@ -20,7 +20,7 @@ const UpdateHadiah = () =>{
     const handleClick = async (e) =>{
         e.preventDefault() // prevent page refresh
         try {
-            await axios.put("http://localhost:8800/admin/daftar-hadiah/update/"+ hadiahId, sentra)
+            await axios.put("http://localhost:8800/admin/daftar-hadiah/update/"+ hadiahId, sentra, {withCredentials: true})
             navigate("/admin/daftar-hadiah")
         } catch (err) {
             console.log(err)

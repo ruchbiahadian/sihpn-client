@@ -20,7 +20,7 @@ const UpdateSentra = () =>{
         e.preventDefault() // prevent page refresh
         try {
             console.log(sentraId, "+", sentra);
-            await axios.put("http://localhost:8800/admin/sentra/update/"+ sentraId, sentra)
+            await axios.put("http://localhost:8800/admin/sentra/update/"+ sentraId, sentra, {withCredentials: true})
             navigate("/admin/sentra")
         } catch (err) {
             console.log(err)

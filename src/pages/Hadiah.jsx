@@ -8,7 +8,7 @@ const Nasabah = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const res = await axios.get("http://localhost:8800/admin/daftar-hadiah")
+                const res = await axios.get("http://localhost:8800/admin/daftar-hadiah", {withCredentials: true})
                 setNasabah(res.data);
             } catch (err) {
                 console.log(err)
@@ -19,7 +19,7 @@ const Nasabah = () =>{
 
     const handleDelete = async (id) =>{
         try {
-            await axios.delete("http://localhost:8800/admin/daftar-hadiah/"+id)
+            await axios.delete("http://localhost:8800/admin/daftar-hadiah/"+id, {withCredentials: true})
             window.location.reload()
         } catch (err) {
             console.log(err)
