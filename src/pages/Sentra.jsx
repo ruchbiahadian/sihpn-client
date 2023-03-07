@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Sentra = () =>{
     const [sentra, setSentra] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
@@ -22,7 +23,8 @@ const Sentra = () =>{
             await axios.delete("http://localhost:8800/admin/sentra/"+id, {withCredentials: true})
             await axios.delete("http://localhost:8800/admin/nasabah/sentra/"+id, {withCredentials: true})
             await axios.delete("http://localhost:8800/admin/hadiah/sentra/"+id, {withCredentials: true})
-            window.location = window.location
+            alert("Sentra dihapus!")
+            navigate("/admin")
         } catch (err) {
             console.log(err)
         }
