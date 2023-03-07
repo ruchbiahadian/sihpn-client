@@ -1,0 +1,324 @@
+@font-face {
+    font-family: 'nunito';
+    src: local('Concert One  Regular'), local('Concert-One--Regular'),
+        url('../src/font/nunito/NunitoSans-Regular.woff2') format('woff2'),
+        url('../src/font/nunito/NunitoSans-Regular.woff') format('woff'),
+        url('../src/font/nunito/NunitoSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: local('Quicksand Bold'), local('Quicksand-Bold'),
+        url('../src/font/quicksand/Quicksand-Bold.woff2') format('woff2'),
+        url('../src/font/quicksand/Quicksand-Bold.woff') format('woff'),
+        url('../src/font/quicksand/Quicksand-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'nunito', sans-serif;
+    color: gray;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #FF6200, #bb7839);
+    /* background-image: url('5479107.jpg');
+    background-size: cover; */
+}
+
+.circleDec{
+    background-color: #FDE283;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    position: fixed;
+    bottom: 20px;
+    left: -80px;
+    z-index: 1;
+}
+
+.circleDec2{
+    background-color: #FDE283;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    position: fixed;
+    top: 10px;
+    right: -80px;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 900px){
+    .circleDec{
+        width: 200px;
+        height: 200px;
+    }
+
+    .circleDec2{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.glass{
+    display: flex;
+    width: 90%;
+    height: 90vh;
+    background-color: rgba(255, 255, 255, .4);
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    flex-direction: column;
+}
+
+.glass .mainForm input, button{
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    margin-top: 20px;
+    font-family: 'nunito', sans-serif;
+}
+
+.glass .mainForm input{
+    border-radius: 6px 0px 0px 6px;
+}
+
+.glass .mainForm button{
+    border-radius: 0px 6px 6px 0px;
+    background-color: #FF6200;
+    color: white;
+}
+
+.glass button{
+    font-weight: bold;
+    color: gray;
+}
+
+.glass button:hover{
+    background-color: rgb(73, 112, 13);
+    color: white;
+}
+
+.glass button:hover a{
+    color: white;
+}
+
+.glass h2{
+    text-align: center;
+    margin-top: -60px;
+    color: white;
+    overflow: auto;
+    font-family: 'Quicksand', sans-serif;
+}
+
+@media only screen and (max-width: 600px){
+    .glass h2{
+        margin-top: -100px;
+        font-size: large;
+    }
+}
+
+.books{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    background-color: rgba(7, 7, 7, 0.2);
+    width: 90%;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.book{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255, 0.4);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.book h4{
+    text-align: center;
+    margin-top: 0;
+}
+
+.book button{
+    margin: 0;
+    padding: 6px;
+
+}
+
+.delete{
+    background-color: rgb(252, 143, 131);
+    color: salmon;
+    cursor: pointer;
+    width: 100%;
+}
+
+.update{
+    bottom: -50px;
+    background-color: white;
+    color: plum;
+    cursor: pointer;
+    width: 100%;
+}
+
+.update, .delete, a {
+    text-decoration: none;
+    color: gray;
+}
+
+.form{
+    display: flex;
+    max-width: 90%;
+    max-height: 90%;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.form input{
+    width: 250px;
+    padding: 10px;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.form select{
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    color: gray;
+}
+
+.form .formButton{
+    border: none;
+    padding: 10px;
+    background-color: #FF6200;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0;
+} 
+
+.back{
+    margin: 0;
+}
+
+.add{
+    margin: 0;
+    background-color: #FF6200;
+}
+
+.inputBox{
+    margin: 0;
+    padding: 0;
+}
+
+.inputBox select{
+    margin: 15px;
+    padding: 0;
+}
+
+.inputBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.dataBox{
+    text-align: center;
+}
+
+.dataBox h4{
+    margin: 0;
+    padding: 6px;
+}
+
+.admin{
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.admin button{
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.login_link{
+    text-decoration: underline;
+    position: absolute;
+    top: 6%;
+    right: 10%;
+}
+
+.coba{
+    background-color: #FF6200;
+    flex-direction: row;
+}
+
+.books table{
+    width: 100%;
+    text-align: center;
+    
+}
+
+.books table .update, .delete{
+    padding: 5px;
+    margin: 0;
+}
+
+.books table td{
+    width: 50%;
+    padding: 4px;
+}
+
+.books thead{
+    background-color: white;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+.books tbody{
+    background-color: rgb(255, 255, 255, 0.5);
+    
+}
+
+.filter{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter input{
+    padding: 6px;
+}

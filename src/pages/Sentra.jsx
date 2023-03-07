@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import {Link} from "react-router-dom";
+
+const Sentra = () =>{
+    const [sentra, setSentra] = useState([])
+
+    useEffect(() =>{
+        const fetchAllSentra = async ()=>{
+            try {
+                const res = await axios.get("http://localhost:8800/admin/sentra")
+                setSentra(res.data);
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        fetchAllSentra()
+    }, [])
+
+    const handleDelete = async (id) =>{
+        try {
+            await axios.delete("http://localhost:8800/admin/sentra/"+id)
+            await axios.delete("http://localhost:8800/admin/nasabah/sentra/"+id)
+            await axios.delete("http://localhost:8800/admin/hadiah/sentra/"+id)
+            window.location.reload()
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    return (
+        <div className="container">
+            <div className="circleDec"></div>
+            <div className="circleDec2"></div>
+            <div className="glass">
+            <p className="login_link"><Link to={`/`}>Logout</Link></p>
+            <h1>Daftar Sentra</h1>
+                <div className="roWrapper">
+                    <button className="back"><Link to="/admin">Kembali</Link></button>
+                    <button className="add"><Link to="/admin/sentra/tambah" style={{color:'white'}}>Tambah Sentra</Link></button>
+                </div>
+                <div className="books">
+                    {sentra.map(sent =>(
+                        <div className="book" key={sent.id}>
+                            <h4>{sent.nama}</h4>
+                            <button className="update"><Link to={`/admin/sentra/update/${sent.id}`}>Update</Link></button>
+                            <button className="delete" onClick={()=>handleDelete(sent.id)}>Hapus</button>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Sentra;
