@@ -18,6 +18,7 @@ const UpdateAdmin = () =>{
         const fetchAllSentra = async ()=>{
             try {
                 const res = await axios.get("http://localhost:8800/admin/update", {withCredentials: true})
+                console.log("admin", res.data[0])
                 setAdmin(res.data[0]);
             } catch (err) {
                 console.log(err)
@@ -35,6 +36,7 @@ const UpdateAdmin = () =>{
         e.preventDefault() // prevent page refresh
         try {
             if(sentra.oldUsername !== admin.username){
+                console.log("admin2", sentra.oldUsername + "+" + admin.username)
                 alert("email lama salah");
             }else if(sentra.oldPassword !== admin.password){
                 alert("password lama salah");
