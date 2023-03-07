@@ -46,7 +46,8 @@ const HadiahNasabah = () =>{
         try {
             console.log('sent', sentra);
             await axios.post("http://localhost:8800/admin/nasabah/hadiah/" + userId, sentra, {withCredentials: true})
-            window.location.reload()
+            alert("Hadiah nasabah berhasil diupdate!")
+            navigate("/admin/nasabah")
         } catch (err) {
             console.log(err)
         }
