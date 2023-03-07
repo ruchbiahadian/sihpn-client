@@ -21,9 +21,7 @@ const Admin = () =>{
             <div className="circleDec"></div>
             <div className="circleDec2"></div>
             <div className="glass">
-                <p className="login_link" onClick={logout}>
-                    Logout
-                </p>
+                <button className="login_link" onClick={logout}>Logout</button>
                 <div className="admin">
                     <Link to="/admin/sentra"><button>Sentra</button></Link>
                     <Link to="/admin/nasabah"><button>Nasabah</button></Link>
