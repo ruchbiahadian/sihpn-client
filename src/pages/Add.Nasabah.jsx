@@ -36,9 +36,10 @@ const AddNasabah = () =>{
     const handleClick = async (e) =>{
         e.preventDefault() // prevent page refresh
         try {
-            const resultId = await axios.post("http://localhost:8800/admin/nasabah/tambah", sentra, {withCredentials: true})
-            await axios.put("http://localhost:8800/admin/nasabah/update/kodeunik/" + (resultId.data.insertId + "x" + sentra.priode), {withCredentials: true});
-            await axios.post("http://localhost:8800/admin/hadiah/tambah/" + (resultId.data.insertId + "x" + sentra.id_sentra), {withCredentials: true});
+            await axios.put("http://localhost:8800/admin/nasabah/update/kodeunik/", {withCredentials: true});
+            // const resultId = await axios.post("http://localhost:8800/admin/nasabah/tambah", sentra, {withCredentials: true});
+            // await axios.put("http://localhost:8800/admin/nasabah/update/kodeunik/" + (resultId.data.insertId + "x" + sentra.priode), {withCredentials: true});
+            // await axios.post("http://localhost:8800/admin/hadiah/tambah/" + (resultId.data.insertId + "x" + sentra.id_sentra), {withCredentials: true});
             navigate("/admin/nasabah")
         } catch (err) {
             console.log(err)
