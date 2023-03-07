@@ -4,11 +4,12 @@ import {useNavigate, Link} from "react-router-dom";
 
 const Admin = () =>{
 
-
+    const navigate = useNavigate()
     const logout = async ()=>{
         try {
             const res = await axios.get("http://localhost:8800/logout", {withCredentials: true})
             console.log("Anda berhasil logout!")
+            navigate("/")
         } catch (err) {
             console.log(err)
         }
@@ -20,8 +21,8 @@ const Admin = () =>{
             <div className="circleDec"></div>
             <div className="circleDec2"></div>
             <div className="glass">
-                <p className="login_link">
-                    <Link onClick={logout} to={`/`}>Logout</Link>
+                <p className="login_link" onClick={logout}>
+                    Logout
                 </p>
                 <div className="admin">
                     <Link to="/admin/sentra"><button>Sentra</button></Link>
