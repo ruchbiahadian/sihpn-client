@@ -9,10 +9,8 @@ const Admin = () =>{
     const handleClick = () =>{
         try {
                 const res = axios.get("http://localhost:8800/logout", {withCredentials: true})
-                if(res.data.length > 0){
-                    console.log("Anda berhasil logout!")
-                    navigate("/")
-                }
+                alert("Anda berhasil logout!")
+                navigate("/")
         } catch (err) {
             console.log(err)
         }
