@@ -26,7 +26,7 @@ const Login = () =>{
                 }
             }else{
                 alert("Username / Password Salah");
-                window.location.reload();
+                navigate("/")
             }
         } catch (err) {
             console.log(err)
