@@ -2,12 +2,27 @@ import React, { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 
 const Admin = () =>{
+
+
+    const logout = async ()=>{
+        try {
+            const res = await axios.get("http://localhost:8800/logout", {withCredentials: true})
+            console.log("Anda berhasil logout!")
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+
     return (
         <div className="container">
             <div className="circleDec"></div>
             <div className="circleDec2"></div>
             <div className="glass">
                 <p className="login_link">
+                    {
+                        logout()
+                    }
                     <Link to={`/`}>Logout</Link>
                 </p>
                 <div className="admin">
