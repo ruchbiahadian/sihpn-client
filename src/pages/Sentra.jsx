@@ -8,7 +8,7 @@ const Sentra = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const res = await axios.get("http://localhost:8800/admin/sentra")
+                const res = await axios.get("http://localhost:8800/admin/sentra", {withCredentials: true})
                 setSentra(res.data);
             } catch (err) {
                 console.log(err)
