@@ -7,7 +7,6 @@ const Admin = () =>{
     const navigate = useNavigate()
 
     const handleClick = () =>{
-        e.preventDefault() // prevent page refresh
         try {
                 const res = axios.get("http://localhost:8800/logout", {withCredentials: true})
                 if(res.data.length > 0){
