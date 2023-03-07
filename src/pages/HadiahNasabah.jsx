@@ -45,7 +45,7 @@ const HadiahNasabah = () =>{
         e.preventDefault() // prevent page refresh
         try {
             console.log('sent', sentra);
-            await axios.put("http://localhost:8800/admin/nasabah/hadiah/" + userId, sentra, {withCredentials: true})
+            await axios.get("http://localhost:8800/admin/nasabah/hadiah/" + userId, sentra, {withCredentials: true})
             window.location.reload()
         } catch (err) {
             console.log(err)
