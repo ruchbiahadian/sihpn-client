@@ -6,10 +6,10 @@ const Admin = () =>{
 
     const navigate = useNavigate()
 
-    const handleClick = async (e) =>{
+    const handleClick = () =>{
         e.preventDefault() // prevent page refresh
         try {
-                const res = await axios.get("http://localhost:8800/logout", {withCredentials: true})
+                const res = axios.get("http://localhost:8800/logout", {withCredentials: true})
                 if(res.data.length > 0){
                     console.log("Anda berhasil logout!")
                     navigate("/")
