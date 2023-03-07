@@ -17,7 +17,12 @@ const AddHadiah = () =>{
     const handleClick = async (e) =>{
         e.preventDefault() // prevent page refresh
         try {
-            await axios.post("http://localhost:8800/admin/daftar-hadiah/tambah", sentra, {withCredentials: true})
+            const tambah = await axios.post("http://localhost:8800/admin/daftar-hadiah/tambah", sentra, {withCredentials: true})
+            if(tambah.data.length > 0){
+                alert("Hadiah berhasil ditambahkan!")
+            }else{
+                alert("Hadiah gagal ditambahkan! Masukkan data yang benar!")
+            }
             navigate("/admin/daftar-hadiah")
         } catch (err) {
             console.log(err)

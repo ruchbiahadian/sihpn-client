@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Nasabah = () =>{
     const [nasabah, setNasabah] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
@@ -20,7 +21,8 @@ const Nasabah = () =>{
     const handleDelete = async (id) =>{
         try {
             await axios.delete("http://localhost:8800/admin/daftar-hadiah/"+id, {withCredentials: true})
-            window.location.reload()
+            alert("Hadiah berhasil dihapus!")
+            navigate("/admin")
         } catch (err) {
             console.log(err)
         }

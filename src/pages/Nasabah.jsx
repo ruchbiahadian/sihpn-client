@@ -30,7 +30,7 @@ const Nasabah = () =>{
             await axios.delete("http://localhost:8800/admin/nasabah/"+id, {withCredentials: true})
             await axios.delete("http://localhost:8800/admin/hadiah/"+id, {withCredentials: true})
             alert("Nasabah berhasil dihapus!")
-            navigate("/admin/nasabah")
+            navigate("/admin")
         } catch (err) {
             console.log(err)
         }

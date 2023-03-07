@@ -20,7 +20,12 @@ const UpdateHadiah = () =>{
     const handleClick = async (e) =>{
         e.preventDefault() // prevent page refresh
         try {
-            await axios.put("http://localhost:8800/admin/daftar-hadiah/update/"+ hadiahId, sentra, {withCredentials: true})
+            const update = await axios.put("http://localhost:8800/admin/daftar-hadiah/update/"+ hadiahId, sentra, {withCredentials: true})
+            if(update.data.length > 0){
+                alert("Hadiah berhasil diubah!")
+            }else{
+                alert("Hadiah gagal diubah! Masukkan data yang benar!")
+            }
             navigate("/admin/daftar-hadiah")
         } catch (err) {
             console.log(err)
