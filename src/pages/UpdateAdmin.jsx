@@ -39,11 +39,11 @@ const UpdateAdmin = () =>{
             }else if(sentra.oldPassword !== admin.password){
                 alert("password lama salah");
             }else{
-                await axios.put("http://localhost:8800/admin/update", sentra, {withCredentials: true})
+                await axios.post("http://localhost:8800/admin/update", sentra, {withCredentials: true})
                 alert("email dan password baru berhasil diubah");
                 navigate("/admin")
             }
-            window.location.reload()
+            navigate("/admin")
         } catch (err) {
             console.log(err)
         }
