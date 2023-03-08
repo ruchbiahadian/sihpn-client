@@ -42,7 +42,7 @@ const Home = () =>{
             <div className="circleDec"></div>
             <div className="circleDec2"></div>
             <div className="glass">
-                <p className="login_link"><Link to={`/login`}>Login</Link></p>
+                <button className="login_link"><Link to={`/login`}>Login</Link></button>
                 <h2>
                     INFORMASI HADIAH PENDAMPINGAN <br/>
                     PROGRAM SAHABAT DAYA UNIVERSITAS

@@ -33,7 +33,6 @@ const Nasabah = () =>{
             <div className="circleDec"></div>
             <div className="circleDec2"></div>
             <div className="glass">
-            <p className="login_link"><Link to={`/`}>Logout</Link></p>
             <h1>Daftar Hadiah</h1>
                 <div className="roWrapper">
                     <button className="back"><Link to="/admin">Kembali</Link></button>
