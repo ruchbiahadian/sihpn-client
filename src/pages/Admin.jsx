@@ -6,9 +6,9 @@ const Admin = () =>{
 
     const navigate = useNavigate()
 
-    const handleClick = () =>{
+    const handleClick = async () =>{
         try {
-                axios.post("http://localhost:8800/logout", {withCredentials: true})
+                await axios.post("http://localhost:8800/logout", {}, {withCredentials: true})
                 alert("Anda berhasil logout!")
                 navigate("/")
         } catch (err) {
