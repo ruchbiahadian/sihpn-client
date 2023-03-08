@@ -14,7 +14,7 @@ const Nasabah = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const resPriode = await axios.get("http://localhost:8800/admin/nasabah/priode", {withCredentials: true})
+                const resPriode = await axios.get("https://sihpn-server-production.up.railway.app/admin/nasabah/priode", {withCredentials: true})
                 setPriode(resPriode.data)
                 // const res = await axios.get("http://localhost:8800/admin/nasabah")
                 // setNasabah(res.data);
@@ -27,8 +27,8 @@ const Nasabah = () =>{
 
     const handleDelete = async (id) =>{
         try {
-            await axios.delete("http://localhost:8800/admin/nasabah/"+id, {withCredentials: true})
-            await axios.delete("http://localhost:8800/admin/hadiah/"+id, {withCredentials: true})
+            await axios.delete("https://sihpn-server-production.up.railway.app/admin/nasabah/"+id, {withCredentials: true})
+            await axios.delete("https://sihpn-server-production.up.railway.app/admin/hadiah/"+id, {withCredentials: true})
             alert("Nasabah berhasil dihapus!")
             navigate("/admin")
         } catch (err) {
@@ -42,7 +42,7 @@ const Nasabah = () =>{
 
     const handleMove = async (e) =>{
         try{
-            const res = await axios.get("http://localhost:8800/admin/nasabah/" + cosedPriode.priode, {withCredentials: true})
+            const res = await axios.get("https://sihpn-server-production.up.railway.app/admin/nasabah/" + cosedPriode.priode, {withCredentials: true})
             setNasabah(res.data);
         }catch (err) {
             console.log(err)

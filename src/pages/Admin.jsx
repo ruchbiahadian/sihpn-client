@@ -8,7 +8,7 @@ const Admin = () =>{
 
     const handleClick = async () =>{
         try {
-                await axios.post("http://localhost:8800/logout", {}, {withCredentials: true})
+                await axios.post("https://sihpn-server-production.up.railway.app/logout", {}, {withCredentials: true})
                 alert("Anda berhasil logout!")
                 navigate("/")
         } catch (err) {

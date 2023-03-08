@@ -17,7 +17,7 @@ const AddNasabah = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const res = await axios.get("http://localhost:8800/admin/sentra", {withCredentials: true})
+                const res = await axios.get("https://sihpn-server-production.up.railway.app/admin/sentra", {withCredentials: true})
                 setSentr(res.data);
             } catch (err) {
                 console.log(err)
@@ -36,10 +36,10 @@ const AddNasabah = () =>{
     const handleClick = async (e) =>{
         e.preventDefault() // prevent page refresh
         try {
-            const resultId = await axios.post("http://localhost:8800/admin/nasabah/tambah", sentra, {withCredentials: true})
+            const resultId = await axios.post("https://sihpn-server-production.up.railway.app/admin/nasabah/tambah", sentra, {withCredentials: true})
             console.log("result_id", resultId.data)
-            await axios.get("http://localhost:8800/admin/nasabah/update/kodeunik/" + (resultId.data.insertId + "x" + sentra.priode), {withCredentials: true})
-            await axios.get("http://localhost:8800/admin/hadiah/tambah/" + (resultId.data.insertId + "x" + sentra.id_sentra), {withCredentials: true})
+            await axios.get("https://sihpn-server-production.up.railway.app/admin/nasabah/update/kodeunik/" + (resultId.data.insertId + "x" + sentra.priode), {withCredentials: true})
+            await axios.get("https://sihpn-server-production.up.railway.app/admin/hadiah/tambah/" + (resultId.data.insertId + "x" + sentra.id_sentra), {withCredentials: true})
             navigate("/admin/nasabah")
         } catch (err) {
             console.log(err)

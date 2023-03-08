@@ -17,7 +17,7 @@ const UpdateAdmin = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const res = await axios.get("http://localhost:8800/admin/update", {withCredentials: true})
+                const res = await axios.get("https://sihpn-server-production.up.railway.app/admin/update", {withCredentials: true})
                 setAdmin(res.data[0]);
             } catch (err) {
                 console.log(err)
@@ -42,7 +42,7 @@ const UpdateAdmin = () =>{
             }else if(sentra.username.length < 1 || sentra.password < 1 ){
                 alert("Masukkan username / password baru!");
             }else{
-                await axios.post("http://localhost:8800/admin/update", sentra, {withCredentials: true})
+                await axios.post("https://sihpn-server-production.up.railway.app/admin/update", sentra, {withCredentials: true})
                 alert("email dan password baru berhasil diubah");
                 navigate("/admin")
             }

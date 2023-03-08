@@ -21,7 +21,7 @@ const Home = () =>{
     const handleClick = async (e) =>{
         e.preventDefault() // prevent page refresh
         try {
-            const res = await axios.get("http://localhost:8800/" + home.kode_unik, {withCredentials: true})
+            const res = await axios.get("https://sihpn-server-production.up.railway.app/" + home.kode_unik, {withCredentials: true})
             const hasil = res.data[0];
             hasil.pengajuan = statusConverter(hasil.pengajuan);
             hasil.pembelian = statusConverter(hasil.pembelian);
