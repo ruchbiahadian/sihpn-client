@@ -9,7 +9,7 @@ const Sentra = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const res = await axios.get("https://sihpn-server-production.up.railway.app/admin/sentra", {withCredentials: true})
+                const res = await axios.get("https://sihpn-server-final-production.up.railway.app/admin/sentra", {withCredentials: true})
                 setSentra(res.data);
             } catch (err) {
                 console.log(err)
@@ -20,9 +20,9 @@ const Sentra = () =>{
 
     const handleDelete = async (id) =>{
         try {
-            await axios.delete("https://sihpn-server-production.up.railway.app/admin/sentra/"+id, {withCredentials: true})
-            await axios.delete("https://sihpn-server-production.up.railway.app/admin/nasabah/sentra/"+id, {withCredentials: true})
-            await axios.delete("https://sihpn-server-production.up.railway.app/admin/hadiah/sentra/"+id, {withCredentials: true})
+            await axios.delete("https://sihpn-server-final-production.up.railway.app/admin/sentra/"+id, {withCredentials: true})
+            await axios.delete("https://sihpn-server-final-production.up.railway.app/admin/nasabah/sentra/"+id, {withCredentials: true})
+            await axios.delete("https://sihpn-server-final-production.up.railway.app/admin/hadiah/sentra/"+id, {withCredentials: true})
             alert("Sentra dihapus!")
             navigate("/admin")
         } catch (err) {

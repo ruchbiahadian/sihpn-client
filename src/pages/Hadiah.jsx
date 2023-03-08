@@ -9,7 +9,7 @@ const Nasabah = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const res = await axios.get("https://sihpn-server-production.up.railway.app/admin/daftar-hadiah", {withCredentials: true})
+                const res = await axios.get("https://sihpn-server-final-production.up.railway.app/admin/daftar-hadiah", {withCredentials: true})
                 setNasabah(res.data);
             } catch (err) {
                 console.log(err)
@@ -20,7 +20,7 @@ const Nasabah = () =>{
 
     const handleDelete = async (id) =>{
         try {
-            await axios.delete("https://sihpn-server-production.up.railway.app/admin/daftar-hadiah/"+id, {withCredentials: true})
+            await axios.delete("https://sihpn-server-final-production.up.railway.app/admin/daftar-hadiah/"+id, {withCredentials: true})
             alert("Hadiah berhasil dihapus!")
             navigate("/admin")
         } catch (err) {

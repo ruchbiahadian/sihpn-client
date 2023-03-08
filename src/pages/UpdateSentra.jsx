@@ -20,7 +20,7 @@ const UpdateSentra = () =>{
         e.preventDefault() // prevent page refresh
         try {
             console.log(sentraId, "+", sentra);
-            await axios.put("https://sihpn-server-production.up.railway.app/admin/sentra/update/"+ sentraId, sentra, {withCredentials: true})
+            await axios.put("https://sihpn-server-final-production.up.railway.app/admin/sentra/update/"+ sentraId, sentra, {withCredentials: true})
             navigate("/admin/sentra")
         } catch (err) {
             console.log(err)

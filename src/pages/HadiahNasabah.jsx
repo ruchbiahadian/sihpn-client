@@ -18,14 +18,14 @@ const HadiahNasabah = () =>{
     useEffect(() =>{
         const fetchAllSentra = async ()=>{
             try {
-                const res = await axios.get("https://sihpn-server-production.up.railway.app/admin/nasabah/hadiah/" + userId, {withCredentials: true})
+                const res = await axios.get("https://sihpn-server-final-production.up.railway.app/admin/nasabah/hadiah/" + userId, {withCredentials: true})
                 sentra.pengajuan = res.data[0].pengajuan;
                 sentra.pembelian = res.data[0].pembelian;
                 sentra.distribusi = res.data[0].distribusi;
                 sentra.hadiah = res.data[0].hadiah;
                 setHadiah(res.data);
                 const nasabahPoin = res.data[0].poin;
-                const res2 = await axios.get("https://sihpn-server-production.up.railway.app/admin/daftar-hadiah/" + nasabahPoin, {withCredentials: true})
+                const res2 = await axios.get("https://sihpn-server-final-production.up.railway.app/admin/daftar-hadiah/" + nasabahPoin, {withCredentials: true})
                 setItemHadiah(res2.data)
             } catch (err) {
                 console.log(err)
@@ -45,7 +45,7 @@ const HadiahNasabah = () =>{
         e.preventDefault() // prevent page refresh
         try {
             console.log('sent', sentra);
-            await axios.post("https://sihpn-server-production.up.railway.app/admin/nasabah/hadiah/" + userId, sentra, {withCredentials: true})
+            await axios.post("https://sihpn-server-final-production.up.railway.app/admin/nasabah/hadiah/" + userId, sentra, {withCredentials: true})
             alert("Hadiah nasabah berhasil diupdate!")
             navigate("/admin/nasabah")
         } catch (err) {

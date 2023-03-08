@@ -16,7 +16,7 @@ const Add = () =>{
     const handleClick = async (e) =>{
         e.preventDefault() // prevent page refresh
         try {
-            await axios.post("https://sihpn-server-production.up.railway.app/admin/sentra/tambah", sentra, {withCredentials: true})
+            await axios.post("https://sihpn-server-final-production.up.railway.app/admin/sentra/tambah", sentra, {withCredentials: true})
             navigate("/admin/sentra")
         } catch (err) {
             console.log(err)
