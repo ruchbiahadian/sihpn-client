@@ -8,7 +8,7 @@ const Admin = () =>{
 
     const handleClick = () =>{
         try {
-                axios.get("http://localhost:8800/logout", {withCredentials: true})
+                axios.post("http://localhost:8800/logout", {withCredentials: true})
                 alert("Anda berhasil logout!")
                 navigate("/")
         } catch (err) {
