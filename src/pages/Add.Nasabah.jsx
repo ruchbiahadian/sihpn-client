@@ -68,6 +68,8 @@ const AddNasabah = () =>{
                     <option value="0">Sesi Pendampingan</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                 </select>
                 <input type="number" placeholder="total poin" onChange={handleChange} name="poin" />
                 <button className="formButton" onClick={handleClick}>Tambah</button>
