@@ -36,7 +36,7 @@ const AddNasabah = () =>{
     const handleClick = async (e) =>{
         e.preventDefault() // prevent page refresh
         try {
-            const resultId = await axios.post("https://sihpn-server-production.up.railway.app/admin/nasabah/tambah", sentra, {withCredentials: true})
+            const resultId = await axios.post("https://sihpn-server-final-production.up.railway.app/admin/nasabah/tambah", sentra, {withCredentials: true})
             console.log("result_id", resultId.data)
             await axios.get("https://sihpn-server-final-production.up.railway.app/admin/nasabah/update/kodeunik/" + (resultId.data.insertId + "x" + sentra.priode), {withCredentials: true})
             await axios.get("https://sihpn-server-final-production.up.railway.app/admin/hadiah/tambah/" + (resultId.data.insertId + "x" + sentra.id_sentra), {withCredentials: true})
