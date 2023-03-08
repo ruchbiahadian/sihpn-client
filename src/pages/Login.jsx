@@ -19,7 +19,7 @@ const Login = () =>{
         e.preventDefault() // prevent page refresh
         try {
             // const result = await axios.post("http://localhost:8800/login", data)
-                const result = await axios.post("https://sihpn-server-production.up.railway.app/login", data, {withCredentials: true});
+                const result = await axios.post("https://sihpn-server-final-production.up.railway.app/login", data, {withCredentials: true});
                 if(result.data.length > 0){
                 if(result.data[0].password === data.password){
                     navigate("/admin")
