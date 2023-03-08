@@ -22,6 +22,7 @@ const Home = () =>{
         e.preventDefault() // prevent page refresh
         try {
             const res = await axios.get("https://sihpn-server-final-production.up.railway.app/" + home.kode_unik, {withCredentials: true})
+            const hasil = res.data[0];
             hasil.pengajuan = statusConverter(hasil.pengajuan);
             hasil.pembelian = statusConverter(hasil.pembelian);
             hasil.distribusi = statusConverter(hasil.distribusi);
