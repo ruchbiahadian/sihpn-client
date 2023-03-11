@@ -127,6 +127,10 @@ html, body{
     font-family: 'Quicksand', sans-serif;
 }
 
+.glass .admin button{
+    background-color: #FDE283;
+}
+
 @media only screen and (max-width: 600px){
     .glass h2{
         margin-top: -100px;
