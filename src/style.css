@@ -131,6 +131,10 @@ html, body{
     background-color: #FDE283;
 }
 
+.glass .admin button:hover{
+    background-color: #8f7a2e;
+}
+
 @media only screen and (max-width: 600px){
     .glass h2{
         margin-top: -100px;
